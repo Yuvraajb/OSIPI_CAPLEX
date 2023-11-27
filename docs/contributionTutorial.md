@@ -4,6 +4,8 @@ This is a basic tutorial on how to contribute to the website if you've never use
 
 [Click here](#where-to-find-documentation) to skip the "setting up workspace" tutorial.
 
+**If you prefer suggesting changes to have them implemented by the Taskforce, please either email one of the GitHub contributors, raise an issue on GitHub or leave feedback using the feedback form.**
+
 <font size=5>Work in a remote environment</font>
 
 ## Work in a new development container

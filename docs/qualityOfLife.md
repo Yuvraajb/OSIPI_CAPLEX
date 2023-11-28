@@ -4,7 +4,11 @@ This section will introduce you to some tools available on this website to make 
 
 ## Copying reference to table data for publications
 
-Inside the data tables you can find a button saying `COPY LINK`. Click on it and the reference to the data cell will be copied into your clipboard. You can use this reference in your publications.
+Inside the data tables you can find a button that says `COPY LINK`. Click on it and the reference to the data cell will be copied into your clipboard. You can use this reference in your publications.
+
+| Header |
+| -- |
+| <button class="md-button md-button--hyperlink">COPY LINK</button> <a id='Placeholder'>This is a placeholder for the button to work.</a> |
 
 ## Copying reference DOI
 

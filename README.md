@@ -28,14 +28,14 @@ We recommend that lexicon terminology is used in all DCE\DSC manuscripts and doc
 
 In this example, the **a code** is *S* and the section name is *quantities*. So the full hyperlink is  osipi.github.io/OSIPI_CAPLEX/quantities/#S. A # symbol must be added immediately after the slash and prior to the **a code**.
 
-Once you have constructed the hyperlink, test it works by entering the address in your browser. The link should take you directly to the quantity, process or model being referenced. 
+Once you have constructed the hyperlink, test it works by entering the address in your browser. The link should take you directly to the quantity, process or model being referenced.
 
 3. Add the hyperlink to the relevant entry in your manuscript or documentation.
 
 ## Contributing to the lexicon
 The lexicon is designed to the extensible and we actively engage researchers in the DCE/DSC MRI field to engage with its usage and development. If you would like to add or edit content (new entries etc.) of the lexicon, please either:
 1. contact the task force leads (currently Ben Dickie (ben.dickie@manchester.ac.uk)) with your proposed changes. These will be reviewed at the next Task Force meeting (usually monthly).
-2. OR create a development branch of main and edit the .md files directly. Once done, submit a pull request (do not merge with main!), which will then be reviewed by the Task Force.     
+2. OR create a development branch of main and edit the .md files directly. Once done, submit a pull request (do not merge with main!), which will then be reviewed by the Task Force.
 
 ## Suggesting edits or additions to lexicon entries
 

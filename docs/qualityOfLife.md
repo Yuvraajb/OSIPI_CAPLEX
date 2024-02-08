@@ -8,7 +8,7 @@ Inside the data tables you can find a button that says `COPY LINK`. Click on it 
 
 | Header |
 | -- |
-| <button class="md-button md-button--hyperlink">COPY LINK</button> <a id='Placeholder'>This is a placeholder for the button to work.</a> |
+| <button class="md-button md-button--hyperlink">COPY LINK</button> <a id='Placeholder'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a> |
 
 ## Copying reference DOI
 

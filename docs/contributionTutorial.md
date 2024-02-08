@@ -4,7 +4,7 @@ This is a basic tutorial on how to contribute to the website if you've never use
 
 [Click here](#where-to-find-documentation) to skip the "setting up workspace" tutorial.
 
-**If you prefer suggesting changes to have them implemented by the Taskforce, please either email one of the GitHub leads (currently [Ben Dicke](mailto:ben.dickie@manchester.ac.uk) and [Rianne Van der Heijden](mailto:rvanderheijd@wisc.edu)), [raise an issue](https://github.com/OSIPI/OSIPI_CAPLEX/issues){target = "_blank"} on GitHub or leave feedback using the [feedback form](https://forms.gle/dsfUEZx6P91rBwJe6){target = "_blank"}.**
+**If you prefer suggesting changes to have them implemented by the Taskforce, please either email one of the GitHub leads (currently [Ben Dicke](mailto:ben.dickie@manchester.ac.uk)), [raise an issue](https://github.com/OSIPI/OSIPI_CAPLEX/issues){target = "_blank"} on GitHub or leave feedback using the [feedback form](https://forms.gle/dsfUEZx6P91rBwJe6){target = "_blank"}.**
 
 <font size=5>Work in a remote environment</font>
 

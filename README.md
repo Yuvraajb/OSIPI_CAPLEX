@@ -34,7 +34,7 @@ Once you have constructed the hyperlink, test it works by entering the address i
 
 ## Contributing to the lexicon
 The lexicon is designed to the extensible and we actively engage researchers in the DCE/DSC MRI field to engage with its usage and development. If you would like to add or edit content (new entries etc.) of the lexicon, please either:
-1. contact the task force leads (currently Ben Dickie (ben.dickie@manchester.ac.uk) or Rianne Van der Heijden (rvanderheijd@wisc.edu) with your proposed changes. These will be reviewed at the next Task Force meeting (usually monthly).
+1. contact the task force leads (currently Ben Dickie (ben.dickie@manchester.ac.uk)) with your proposed changes. These will be reviewed at the next Task Force meeting (usually monthly).
 2. OR create a development branch of main and edit the .md files directly. Once done, submit a pull request (do not merge with main!), which will then be reviewed by the Task Force.     
 
 ## Suggesting edits or additions to lexicon entries
@@ -57,7 +57,7 @@ The items in this group are related to electromagnetic tissue properties and ele
  | Q.EL1.999 | <a name="not listed EL1"></a> Quantity not listed | -- | -- | This is a custom free-text item, which can be used if a quantity of interest is not listed. Please state a literature reference and request the item to be added to the lexicon for future usage. | [variable] | -- |
 ```
 
-To add a new entry, identify the section and group that makes the most sense, then simply add a new line to the .md file between the last numbered entry and the **not listed** entry. Remember to assign a new code (usually the same as the previous entry but incremented by 1.
+To add a new entry, identify the section and group that makes the most sense, then simply add a new line to the .md file between the last numbered entry and the **not listed** entry. Remember to assign a new code (usually the same as the previous entry but incremented by 1).
 
 For example:
 

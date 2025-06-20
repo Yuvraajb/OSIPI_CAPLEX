@@ -43,7 +43,7 @@ nav:
       - About Caplex: index.md
       - CAPLEX structure: structure.md
       - How to use the website: qualityOfLife.md
-      - How to contribute: contributionTutorial.md
+      - How to contribute: improved-contribution-tutorial.md
   - Sections:
     - Q - Quantities: quantities.md
     - M - Perfusion models: perfusionModels.md

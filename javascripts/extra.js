@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   searchInput.parentNode.style.position = 'relative';
   searchInput.parentNode.appendChild(suggestionDiv);
 
-  fetch('includes/abbreviations.md')
+  fetch('assets/abbreviations.md')
     .then(response => response.text())
     .then(text => {
       const abbrMap = {};

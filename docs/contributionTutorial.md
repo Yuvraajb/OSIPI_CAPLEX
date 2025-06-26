@@ -1,8 +1,13 @@
-<b><font color=#FF0000>If you follow this tutorial but find yourself stuck, please submit an issue in the <a id="tutorialIssue" href="https://github.com/OSIPI/OSIPI_CAPLEX/issues">github repository</a> and include all steps you have taken and the full traceback to the error you've encountered so we may improve this page.</font></b>
+<b><font color=#FF0000>If you follow this tutorial but find yourself stuck, please submit an issue in the 
+<a id="tutorialIssue" href="https://github.com/OSIPI/OSIPI_CAPLEX/issues">github repository</a> 
+and include all steps you have taken and the full traceback to the error you've encountered so we may improve this page.
+</font></b>
 
 This is a basic tutorial on how to contribute to the website if you've never used github, git or written any code for a website before. You can either [use a remote environment](#work-in-a-new-development-container) via GitHub, or [use your local machine](#install-anaconda).
 
 [Click here](#where-to-find-documentation) to skip the "setting up workspace" tutorial.
+
+**If you prefer suggesting changes to have them implemented by the Taskforce, please either email one of the GitHub leads (currently [Ben Dicke](mailto:ben.dickie@manchester.ac.uk)), [raise an issue](https://github.com/OSIPI/OSIPI_CAPLEX/issues){target = "_blank"} on GitHub or leave feedback using the [feedback form](https://forms.gle/dsfUEZx6P91rBwJe6){target = "_blank"}.**
 
 <font size=5>Work in a remote environment</font>
 
@@ -31,7 +36,7 @@ It is advised to use a context manager and an IDE (integrated development enviro
 It is possible to install Git, VSCode and [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/){target = "_blank"} (1) (lite version of Anaconda that only contains `conda`, Python and few basic packages) using `winget` on Windows if you're looking for a quick setup. Run the following commands:
 { .annotate }
 
-1.  If you still want full version of Anaconda use `winget install -e --id Anaconda.Anaconda3` instead.
+If you still want full version of Anaconda use `winget install -e --id Anaconda.Anaconda3` instead.
 
 ```
 winget install -e --id Git.Git
@@ -79,7 +84,7 @@ tutorial will use
 `pip install mkdocs-material`(1)
 { .annotate }
 
-1.  `conda install -c conda-forge mkdocs-material`
+`conda install -c conda-forge mkdocs-material`
 
 Verify the installation by running `conda list`. You should see an alphabetically 
 ordered list of packages including mkdocs-material.
@@ -132,7 +137,7 @@ Navigate to [OSIPI_CAPLEX GitHub](https://github.com/OSIPI/OSIPI_CAPLEX){target 
 Copy the URL to your fork on github.(1) Open VSCode. On the welcome page find `Clone Git Repository` and click on it. A small window will open at the top of the screen. Paste the fork URL here. 
 { .annotate }
 
-1.  For example `https://github.com/MartinKjunior/OSIPI_CAPLEX_MartinK`
+For example `https://github.com/MartinKjunior/OSIPI_CAPLEX_MartinK`
 
 ![clone repo](tutorialImgs/clone repo.png)
 
@@ -153,6 +158,7 @@ Now you can open one of the files such as `contributionTutorial.md` and start ma
 #### 4.2 Configure Git
 
 In order to upload your changes you need to configure your git so that your changes may be attributed to you. If you've installed Git for Windows, you can run
+
 ```
 git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR EMAIL"
@@ -184,7 +190,7 @@ Once you're happy with all of your changes, you need to create a pull request fo
 Build a local version of the site so you can see changes take place immediately. Use the `cd` command to guide your terminal into the folder containing the `mkdocs.yml` file. You can see the current path right next to `(CAPLEX)` in your terminal (1). Once you're done, run `mkdocs serve` which will build a local version of the website. At the bottom of your terminal the final line will contain the address 127.0.0.1:8000. Hold CTRL and click on it to open in your default browser (best to move it to second monitor with VSCode open on your primary monitor). Now whenever you save any file you've worked on, the local version of the website will automatically be rebuilt.
 { .annotate }
 
-1.  When you write `cd .\` you can press **tab** to scroll through paths found in a particular folder, saving you typing long folder names. Once you **tab** to the folder you want, write another `\` and you can continue tabbing through the available subfolders.
+When you write `cd .\` you can press **tab** to scroll through paths found in a particular folder, saving you typing long folder names. Once you **tab** to the folder you want, write another `\` and you can continue tabbing through the available subfolders.
 
 <figure markdown>
   ![(mkdocs serve highlight)](tutorialImgs/mkdocs serve highlight.png)
@@ -205,7 +211,7 @@ The core file that builds the website is `mkdocs.yml`. It defines the authorship
 The `MathJax` extension properties are defined under `extra_javascript`(1) and can be further customised by `javascripts/mathjax.js`.
 { .annotate }
 
-1.  Version of MathJax is controlled with the link `https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML` which currently is set to be the 2.7.7 version. For more info [click here](https://docs.mathjax.org/en/latest/web/start.html){target = "_blank"}.
+Version of MathJax is controlled with the link `https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML` which currently is set to be the 2.7.7 version. For more info [click here](https://docs.mathjax.org/en/latest/web/start.html){target = "_blank"}.
 
 Properties of existing objects can be modified using the `stylesheets/extra.css` file. For example, this is how we control the width of the tables shown so they use the full space provided by your monitor.
 
@@ -226,7 +232,7 @@ Text may be added between `<a></a>` which will be highlighted as blue and if `hr
 If we wish to send the user somewhere, we can link parts of the website or add external links to text. This can be done by either using HTML anchors as discussed in `1. Adding a new anchor`, or by using `[shown text](url)`. The `url` may be a reference within the webpage, for example if `url` is `#syntax-and-commands-used-in-caplex` then [shown text](#syntax-and-commands-used-in-caplex) will send you to the title of this section. If `url` is `quantities.md#S`(1), then [shown text](quantities.md#S){target = "_blank"} will send you to the Signal quantity in the Q - Quantities section. If `url` is `https://github.com/OSIPI/OSIPI_CAPLEX` then [new website](https://github.com/OSIPI/OSIPI_CAPLEX){target = "_blank"} will be opened. For references, please use the full doi address where possible, such as `https://doi.org/10.1007/b137553`. If DOI is unavailable, please use PubMed link such as `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760951/`.
 { .annotate }
 
-1.  The part after `#` is the `id` or `name` of the anchor element.
+The part after `#` is the `id` or `name` of the anchor element.
 
 ??? note "Opening link in a new tab"
 
@@ -267,7 +273,7 @@ After that, the first row may be added by adding another line of `| -- | -- | --
 The data we add into the table must be part of a single line, therefore using `enter` key to create a new line would break the formatting of the table. Instead, use the HTML break symbol `<br>` to create a new line inside of a cell.(1)
 { .annotate }
 
-1.  Consider using new lines to ensure equations are shown in their entirety.
+Consider using new lines to ensure equations are shown in their entirety.
 
 ??? note "Adding math equations"
 
@@ -290,7 +296,7 @@ Images are added using the syntax<br>
 with an optional configuration inside `{}`(1) at the end. For example, <br>`![test](osipiImgs/OSIPI_logo_only_square.png){ width="100" }` will create
 { .annotate }
 
-1.  Multiple configurations should all be included within a single `{}` with spaces between, e.g. `{ width="100" align=right }`.
+Multiple configurations should all be included within a single `{}` with spaces between, e.g. `{ width="100" align=right }`.
 
 
 ![test](osipiImgs/OSIPI_logo_only_square.png){ width="150" align=right }
@@ -314,7 +320,7 @@ To enhance user experience, we provide a button to copy the URL as a reference t
 
 </div>
 
-1.  The base class we use is `md-button`. To create an extension to its properties you can add a new class such as <br>`md-button--example`. In `extra.css` this would look like <br>`.md-button.md-button--example {}` which translates to <br>`class="md-button md-button--example"` (note a whitespace instead of `.`) in the HTML code.
+The base class we use is `md-button`. To create an extension to its properties you can add a new class such as <br>`md-button--example`. In `extra.css` this would look like <br>`.md-button.md-button--example {}` which translates to <br>`class="md-button md-button--example"` (note a whitespace instead of `.`) in the HTML code.
 
 The button builds the hyperlink using the `id=` of the anchor inside the closest table row (`tr` element). Consider the table row<br>
 

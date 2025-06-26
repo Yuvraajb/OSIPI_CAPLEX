@@ -32,6 +32,8 @@ theme:
         name: Switch to light mode
   features:
     - search.suggest
+    - search.highlight
+    - search.share
   icon:
     admonition:
       note: fontawesome/solid/note-sticky
@@ -66,10 +68,13 @@ nav:
 plugins:
   - search:
       lang: en
-      separator: '[\s\-,:!=\[\]()"/\*\^_~\.\+]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      separator: '[\s\-\.,:;!?\[\]\(\)"/\*\^_~\+]+|(?<=[a-z])(?=[A-Z])'
       prebuild_index: true
       min_search_length: 2
       indexing: full
+      boost: 7
+      pipeline:
+        - stopWordFilter
 
 
 markdown_extensions:

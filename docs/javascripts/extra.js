@@ -191,3 +191,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // --- End Simple Did You Mean Suggestion ---
+
+// --- Search Result Prioritization for Table Rows and Notation Matching ---
+function normalizeNotation(str) {
+  // Remove HTML tags, sub/superscripts, and make lowercase
+  if (!str) return '';
+  // Remove LaTeX $...$ and HTML tags
+  str = str.replace(/\$[^$]*\$/g, '');
+  str = str.replace(/<[^>]+>/g, '');
+  // Remove subscript/superscript unicode (optional, for robustness)
+  str = str.replace(/[\u2070-\u209F]/g, '');
+  // Remove non-alphanumeric
+  str = str.replace(/[^a-zA-Z0-9]/g, '');
+  return str.toLowerCase();
+}
+
+function isTableRowResult(result) {
+  // Heuristic: Table rows have OSIPI code patterns and Notation fields
+  // e.g., location includes 'quantities', 'perfusionModels', 'perfusionProcesses', 'generalPurposeProcesses', etc.
+  if (!result || !result.location) return false;
+  return /quantities|perfusionModels|perfusionProcesses|generalPurposeProcesses|derivedProcesses/.test(result.location);
+}
+
+function extractNotation(result) {
+  // Try to extract Notation from the summary or text
+  if (!result || !result.summary) return '';
+  // Look for Notation: ... or | ... | ... | Notation | ... |
+  // Try to extract the Notation column from a markdown table row
+  const notationMatch = result.summary.match(/\|[^|]*\|[^|]*\|[^|]*\|([^|]*)\|/);
+  if (notationMatch && notationMatch[1]) {
+    return notationMatch[1].trim();
+  }
+  // Fallback: look for Notation: ...
+  const altMatch = result.summary.match(/Notation:?\s*([^|\n]+)/i);
+  if (altMatch && altMatch[1]) {
+    return altMatch[1].trim();
+  }
+  return '';
+}
+
+// Patch displayResults to prioritize table rows and Notation matches
+const origDisplayResults = window.displayResults || displayResults;
+window.displayResults = function(results) {
+  const searchInput = document.querySelector('input.md-search__input') || document.getElementById('mkdocs-search-query');
+  const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  const normQuery = normalizeNotation(query);
+
+  // Partition results
+  let tableMatches = [], notationMatches = [], otherResults = [];
+  results.forEach(result => {
+    if (isTableRowResult(result)) {
+      // Check OSIPI name or Notation match
+      const notation = extractNotation(result);
+      const normNotation = normalizeNotation(notation);
+      // Also check title for OSIPI name match
+      const normTitle = normalizeNotation(result.title);
+      if (normNotation && normQuery && normNotation.includes(normQuery)) {
+        notationMatches.push(result);
+      } else if (normTitle && normQuery && normTitle.includes(normQuery)) {
+        notationMatches.push(result);
+      } else {
+        tableMatches.push(result);
+      }
+    } else {
+      otherResults.push(result);
+    }
+  });
+  // Order: Notation matches > Table matches > Other
+  const finalResults = notationMatches.concat(tableMatches, otherResults);
+  origDisplayResults(finalResults);
+};
+// --- End Search Result Prioritization ---
